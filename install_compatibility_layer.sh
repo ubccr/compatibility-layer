@@ -171,7 +171,7 @@ export SINGULARITY_HOME="${EESSI_TMPDIR}/home:/home/${USER}"
 [[ ${VERBOSE} == '-vvv' ]] && echo "SINGULARITY_HOME='${SINGULARITY_HOME}'"
 
 # Construct the Ansible playbook command
-ANSIBLE_OPTIONS="-e eessi_host_os=linux -e eessi_host_arch=$(uname -m)"
+ANSIBLE_OPTIONS="${ANSIBLE_OPTIONS} -e eessi_host_os=linux -e eessi_host_arch=$(uname -m)"
 if [[ ! -z ${VERSION} ]]; then
     ANSIBLE_OPTIONS="${ANSIBLE_OPTIONS} -e eessi_version=${VERSION}"
 fi

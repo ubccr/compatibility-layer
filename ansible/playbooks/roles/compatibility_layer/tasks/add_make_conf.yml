@@ -1,0 +1,7 @@
+# Add a custom make.conf to the Gentoo Prefix installation.
+---
+- name: Create make.conf
+  ansible.builtin.copy:
+    src: "make-{{ eessi_host_arch }}.conf"
+    dest: "{{ gentoo_prefix_path }}/etc/portage/make.conf/0500_eessi_prefix_make.conf"
+    mode: '0644'
